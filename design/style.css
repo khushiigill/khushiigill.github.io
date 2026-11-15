@@ -214,7 +214,7 @@ html.home-page {
 }
 
 .home {
-  max-width: 1160px;
+  max-width: 900px;
   padding: 28px 40px 0;
   background: transparent;
   color: #332f2c;
@@ -447,7 +447,7 @@ html.story-page {
   background-repeat: repeat, repeat-y;
 }
 .story {
-  max-width: 1160px;
+  max-width: 900px;
   padding: 28px 40px 0;
   background: transparent;
   color: #332f2c;
