@@ -175,13 +175,21 @@
       const cluster = document.createElement('div');
       cluster.className = 'poster-cluster';
       const tail = posters.length % 2 ? posters.splice(-3) : [];
-      posters.forEach((poster) => cluster.append(poster));
-      if (tail.length) {
-        const group = document.createElement('div');
-        group.className = 'poster-tail';
-        tail.forEach((poster) => group.append(poster));
-        cluster.append(group);
+      const group = document.createElement('div');
+      group.className = 'poster-tail';
+      tail.forEach((poster) => group.append(poster));
+      const phoneLayout = window.matchMedia('(max-width: 640px)');
+      function arrangePosters() {
+        const arranged = [...posters];
+        if (phoneLayout.matches && wall.closest('.express-photography')) {
+          // Balance the two columns before the final row of three.
+          [arranged[9], arranged[20]] = [arranged[20], arranged[9]];
+        }
+        cluster.replaceChildren(...arranged);
+        if (tail.length) cluster.append(group);
       }
+      arrangePosters();
+      phoneLayout.addEventListener('change', arrangePosters);
       wall.append(cluster);
     });
   </script>
