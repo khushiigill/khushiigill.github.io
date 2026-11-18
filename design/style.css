@@ -1339,3 +1339,8 @@ html.story-page {
   .express-story .poster-tail { display: grid; column-span: all; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 12px; }
   .express-story .poster-cluster .poster-tail .express-print:nth-child(n) { width: 100%; margin: 0; }
 }
+
+
+@media (max-width: 640px) {
+  .home h1 { font-size: clamp(34px, 10.4vw, 58px); white-space: nowrap; }
+}
