@@ -1347,3 +1347,9 @@ html.story-page {
 @media (max-width: 640px) {
   .story.about-story header p:last-child { max-width: 290px; text-wrap: balance; }
 }
+
+.story.about-story .about-intro-break { display: none; }
+@media (max-width: 640px) {
+  .story.about-story header p:last-child { max-width: 100%; text-wrap: normal; }
+  .story.about-story .about-intro-break { display: block; }
+}
