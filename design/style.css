@@ -1302,33 +1302,40 @@ html.story-page {
   .home .project-grid article:last-child { grid-column: 1 / -1; width: calc((100% - 32px) / 2); justify-self: center; }
 }
 
-/* On phones, place the notes beside the mockups they describe. */
-@media (max-width: 640px) {
-  .story .mockup-collection { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; align-items: center; }
-  .story .mockup-wall, .story .mockup-annotations { display: contents; }
-  .story .mockup-wall .story-polaroid.mockup-photo,
-  .story .mockup-wall .story-polaroid.mockup-photo:nth-child(3n) { position: relative; left: auto; top: auto; width: 100%; margin: 0; }
-  .story .mockup-photo-2 { grid-area: 1 / 1; }
-  .story .mockup-photo-3 { grid-area: 1 / 2; }
-  .story .mockup-photo-5 { grid-area: 2 / 1; }
-  .story .mockup-photo-7 { grid-area: 2 / 2; }
-  .story .mockup-photo-8 { grid-area: 4 / 1; }
-  .story .mockup-photo-9 { grid-area: 4 / 2; }
-  .story .mockup-photo-11 { grid-area: 5 / 1; }
-  .story .mockup-note { position: relative; width: auto; text-align: center; color: #c42529; font: 400 17px/1.15 'Gaegu', cursive; }
-  .story .mockup-note br { display: block; }
-  .story .mockup-note-one { grid-area: 3 / 2; }
-  .story .mockup-note-two { grid-area: 3 / 1; }
-  .story .mockup-note-three { grid-area: 5 / 2; }
-  .story .mockup-note svg { display: block; width: 34px; height: 23px; margin: 0 auto; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-  .story .mockup-note-one svg, .story .mockup-note-two svg { position: absolute; top: -22px; left: calc(50% - 17px); transform: rotate(180deg); }
-  .story .mockup-note-three svg { position: absolute; top: 50%; left: -20px; transform: translate(-100%, -50%) rotate(-70deg); }
-  .story .mockup-collection figcaption { grid-column: 1 / -1; margin-top: 12px; }
-}
-@media (max-width: 640px) {
-  .story .mockup-note { top: auto; right: auto; bottom: auto; left: auto; transform: none; }
-}
 @media (max-width: 640px) {
   .express-story .poster-cluster { display: block; columns: 2; column-gap: 16px; }
   .express-story .poster-cluster .express-print:nth-child(n) { display: inline-block; width: 100%; margin: 0 0 20px; break-inside: avoid; vertical-align: top; }
+}
+
+/* Keep the layered mockup collage on phones, with space for its notes. */
+@media (max-width: 640px) {
+  .story .mockup-wall { display: block; position: relative; width: 86%; aspect-ratio: 4 / 5.2; padding: 0; margin: 60px auto -12%; }
+  .story .mockup-wall .story-polaroid.mockup-photo,
+  .story .mockup-wall .story-polaroid.mockup-photo:nth-child(3n) { position: absolute; margin: 0; padding: 5px 5px 3px; }
+  .story .mockup-wall .story-polaroid.mockup-photo-2 { left: 24%; top: 1%; width: 49%; }
+  .story .mockup-wall .story-polaroid.mockup-photo-3 { left: 52%; top: 14%; width: 43%; }
+  .story .mockup-wall .story-polaroid.mockup-photo-5 { left: 2%; top: 19%; width: 48%; }
+  .story .mockup-wall .story-polaroid.mockup-photo-7 { left: 28%; top: 31%; width: 51%; }
+  .story .mockup-wall .story-polaroid.mockup-photo-8 { left: 65%; top: 37%; width: 42%; }
+  .story .mockup-wall .story-polaroid.mockup-photo-9 { left: 3%; top: 46%; width: 46%; }
+  .story .mockup-wall .story-polaroid.mockup-photo-11 { left: 35%; top: 54%; width: 51%; }
+  .story .mockup-annotations { display: block; margin: 0; }
+  .story .mockup-note { position: absolute; width: 90px; font-size: 15px; line-height: 1.1; }
+  .story .mockup-note br { display: block; }
+  .story .mockup-note svg { display: block; width: 33px; height: 23px; }
+  .story .mockup-note-one { top: -48px; left: 0; right: auto; transform: rotate(-4deg); }
+  .story .mockup-note-two { top: -48px; right: 0; left: auto; transform: rotate(3deg); }
+  .story .mockup-note-three { top: auto; bottom: 45px; left: 0; right: auto; transform: rotate(-3deg); }
+  .story .mockup-note-three svg { transform: translateX(12px); }
+}
+
+@media (max-width: 640px) {
+  .home h1, .story h1 { filter: url(#soft-handwritten-edges); }
+
+}
+
+.express-story .poster-tail { display: contents; }
+@media (max-width: 640px) {
+  .express-story .poster-tail { display: grid; column-span: all; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 12px; }
+  .express-story .poster-cluster .poster-tail .express-print:nth-child(n) { width: 100%; margin: 0; }
 }

@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adobe Express Templates — Khushi's Portfolio</title>
-  <link rel="stylesheet" href="../style.css?v=312">
+  <link rel="stylesheet" href="../style.css?v=313">
 </head>
 <body class="story express-story">
+  <svg width="0" height="0" aria-hidden="true" focusable="false"><filter id="soft-handwritten-edges" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.075" numOctaves="2" seed="8" result="grain" /><feDisplacementMap in="SourceGraphic" in2="grain" scale="1.1" /></filter></svg>
   <svg width="0" height="0" aria-hidden="true" focusable="false"><filter id="handwritten-edges" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.075" numOctaves="2" seed="8" result="grain" /><feDisplacementMap in="SourceGraphic" in2="grain" scale="3.8" /></filter></svg>
   <header>
     <p>TEMPLATE DESIGN · ADOBE EXPRESS</p>
@@ -173,7 +174,14 @@
       wall.classList.add('gallery-walls');
       const cluster = document.createElement('div');
       cluster.className = 'poster-cluster';
+      const tail = posters.length % 2 ? posters.splice(-3) : [];
       posters.forEach((poster) => cluster.append(poster));
+      if (tail.length) {
+        const group = document.createElement('div');
+        group.className = 'poster-tail';
+        tail.forEach((poster) => group.append(poster));
+        cluster.append(group);
+      }
       wall.append(cluster);
     });
   </script>
