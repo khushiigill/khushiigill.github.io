@@ -27,7 +27,7 @@ document.querySelectorAll('.about-photography .about-photo-stack figure').forEac
   }
 
   photo.addEventListener('pointerdown', (event) => {
-    if (event.button !== 0) return;
+    if (event.button !== 0 || event.pointerType === 'touch') return;
     drag = { id: event.pointerId, startX: event.clientX, startY: event.clientY, x, y };
     bringForward();
     photo.classList.add('is-dragging');

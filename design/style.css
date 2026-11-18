@@ -1237,3 +1237,56 @@ html.story-page {
 .story.about-story .about-moodboard .about-photo-stack figure.is-dragging { cursor: grabbing; }
 .story.about-story .about-moodboard .about-photo-stack figure img { -webkit-user-drag: none; user-select: none; }
 .story.about-story .about-moodboard .about-photo-stack figure:focus-visible { outline: 2px solid #c42529; outline-offset: 4px; }
+
+
+/* Consistent, text-coloured sparkles on every device (including iOS). */
+.home .sparkle { display: inline-block; width: .8em; height: .8em; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; vertical-align: -.03em; }
+.home .red-star .sparkle { width: 1em; height: 1em; }
+
+/* A calmer, more spacious layout for phones. */
+@media (max-width: 640px) {
+  .home, .story { box-sizing: border-box; padding-left: clamp(24px, 7vw, 32px); padding-right: clamp(24px, 7vw, 32px); }
+  .home .topline { gap: 12px; }
+  .home nav { gap: clamp(12px, 4vw, 18px); }
+  .home nav a { font-size: 18px; }
+  .home header { padding: 72px 0 78px; }
+  .home h1 { font-size: clamp(45px, 13vw, 62px); line-height: 1.14; -webkit-text-stroke: .8px currentColor; filter: none; }
+  .home .intro-description { max-width: 29ch; line-height: 1.3; }
+  .home .work-section, .home #about, .home .home-section { padding-top: 58px; padding-bottom: 62px; }
+  .home .section-title h2, .home #about h2 { font-size: clamp(48px, 11vw, 58px); }
+  .home .project-grid { width: min(100%, 310px); margin-top: 48px; gap: 55px; }
+  .home .project-category { margin-top: 30px; }
+  .home .contact-links { display: grid; grid-template-columns: repeat(2, minmax(0, 100px)); gap: 24px 28px; }
+  .home footer { gap: 16px; }
+  .story { font-size: 20px; line-height: 1.45; }
+  .story header { padding: 45px 0 40px; }
+  .story h1 { font-size: clamp(34px, 9vw, 45px); line-height: 1.18; white-space: normal; text-wrap: balance; -webkit-text-stroke: .6px currentColor; filter: none; }
+  .story header p:last-child { font-size: 21px; line-height: 1.4; }
+  .story section { padding: 52px 0; }
+  .story section h2 { font-size: clamp(34px, 9vw, 42px); text-wrap: balance; }
+  .story section p { text-wrap: pretty; }
+  .story .story-cover { margin-bottom: 60px; }
+  .story.about-story .about-moodboard .about-photo-stack figure { touch-action: pan-y; }
+  .story.about-story .pet-photos { gap: 18px; margin-top: 58px; }
+  .story.about-story .pet-photos figure { width: calc((100% - 18px) / 2); }
+  .story.about-story .tool-stickers { display: grid; grid-template-columns: repeat(2, minmax(0, 116px)); gap: 24px 20px; }
+  .story.about-story .tool-sticker { width: auto; }
+}
+
+@media (min-width: 360px) and (max-width: 640px) {
+  .home .contact-links, .story.about-story .tool-stickers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: 100%; }
+  .home .contact-links a, .story.about-story .tool-sticker { width: 100%; min-width: 0; min-height: 0; font-size: clamp(13px, 3.7vw, 17px); gap: 10px; }
+  .home .contact-links svg, .story.about-story .tool-icon { width: clamp(49px, 15vw, 64px); height: clamp(49px, 15vw, 64px); padding: 10px; }
+  .story.about-story .tool-sticker > span:last-child { white-space: normal; line-height: 1.1; }
+}
+
+@media (max-width: 640px) {
+  .story .mockup-annotations { display: flex; justify-content: center; gap: 8px 18px; margin: 24px auto 0; }
+  .story .mockup-note { position: static; width: auto; transform: none; font-size: 17px; line-height: 1.2; }
+  .story .mockup-note br { display: none; }
+  .story .mockup-note svg { display: none; }
+}
+@media (min-width: 360px) and (max-width: 640px) {
+  .story.about-story .tool-sticker { font-size: clamp(14px, 3.65vw, 16px); }
+  .story.about-story .tool-sticker > span:last-child { white-space: nowrap; }
+}
