@@ -15,12 +15,12 @@
 .supplement p{line-height:1.4}
 .last>h2{line-height:1.12}.last>p{line-height:1.5}
 @media (max-width:480px){.hero{padding:30px 20px 18px;min-height:200px}.hero-copy{width:54%}.hero h1{font-size:23px;line-height:1.12;margin-bottom:14px}.section{padding:25px 20px 0}.section-head h2{font-size:22px}.categories{padding-top:30px}.body-panel{padding-bottom:24px}.cards,.grid{gap:12px}.supplement{margin:23px 20px 0;padding:18px}.supplement h2{font-size:21px}.curated{padding-bottom:24px}.last{padding:32px 20px}.food-banner h2{font-size:30px}}
-.app{background-image:url('assets/background-squiggle.svg');background-repeat:repeat-y;background-size:100% auto}
+.app{background-image:url('assets/background-squiggle.svg?v=2');background-repeat:repeat-y;background-size:100% auto}
 @media (max-width:480px){.app{width:calc(100% - 48px);max-width:320px}.bottom{width:calc(100% - 48px);max-width:320px}}
 @media (max-width:360px){.hero h1{font-size:20px}.hero-copy{width:56%}.section{padding-left:16px;padding-right:16px}.supplement{margin-left:16px;margin-right:16px}.last{padding-left:16px;padding-right:16px}.section-head h2{font-size:20px}}
 @font-face{font-family:'DM Serif Display';src:url('assets/DMSerifDisplay-Regular.ttf') format('truetype');font-display:swap;font-weight:400}
 h1,h2{font-family:'DM Serif Display',Georgia,serif!important;font-weight:400!important;letter-spacing:0!important}
-body{background-color:#fcebe4;background-image:url('assets/background-squiggle.svg');background-repeat:repeat-y;background-size:100% auto;background-position:center top}
+body{background-color:#fcebe4;background-image:url('assets/background-squiggle.svg?v=2');background-repeat:repeat-y;background-size:100% auto;background-position:center top}
 .app{background:transparent}
 .product-img{overflow:hidden;min-width:0}.product-img img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
 .category{position:relative;overflow:hidden}.category-illustration{height:88px;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}.category-illustration img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.category.lavender .category-illustration img{transform:scale(1.7)}.category.green .category-illustration img{transform:scale(1.2)}.category.yellow .category-illustration img{transform:scale(1.3)}.category.peach .category-illustration img{transform:scale(1.1)}
